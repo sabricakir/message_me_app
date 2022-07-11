@@ -14,3 +14,7 @@
  *= require_self
  *= require semantic-ui
  */
+
+ .chatbox{
+    height: 450px;
+ }
