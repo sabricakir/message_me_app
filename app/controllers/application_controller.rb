@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !logged_in?
-      flash[:error] = "Devam etmek için öncelikle giriş yapmalısınız!"
+      flash[:error] = "Devam Etmek İçin Öncelikle Giriş Yapmalısınız!"
       redirect_to login_path
     end
   end
