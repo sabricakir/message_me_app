@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:session][:username])
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
-            flash[:success] = "Başaraıyla Giriş Yapıldı"
+            flash[:success] = "Başarıyla Giriş Yaptınız"
             redirect_to root_path
         else
             flash.now[:error] ="Giriş Yaparken Bir Hata Oluştu"
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session[:user_id] = nil
-        flash[:succes] = "Başarıyla Çıkış Yaptınız"
+        flash[:success] = "Başarıyla Çıkış Yaptınız"
         redirect_to login_path
     end
 end
