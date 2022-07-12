@@ -1,12 +1,9 @@
 <div class="ui inverted large menu">
     <div class="ui container">
        <%=link_to "Chatroom", root_path, class:"item"%>
-    <a class="item">
-        Messages
-    </a>
     <div class="right menu">
         <div class="ui dropdown item">
-        Account <i class="dropdown icon"></i>
+        Hesap <i class="dropdown icon"></i>
         <div class="menu">
             <%if logged_in?%>
                 <%= link_to "Çıkış Yap", logout_path, method: :delete, class:"item"%>
@@ -17,7 +14,7 @@
         </div>
         </div>
         <div class="item">
-            <%= link_to "Giriş Yap", login_path, class:"ui primary button"%>
+            <%= link_to "Giriş Yap", login_path, class:"ui green button"%>
         </div>
         </div>
     </div>
