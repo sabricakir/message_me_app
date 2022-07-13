@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
-  before_action :cookie_set
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -18,10 +17,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def cookie_set
-    @user = current_user
-    return unless current_user
-    cookies[:user_id] = @user.id
-  end
 
 end

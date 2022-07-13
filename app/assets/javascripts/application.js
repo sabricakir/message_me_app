@@ -16,13 +16,15 @@
 //= require_tree .
 //= require semantic-ui
 
-scroll_bottom = function(){
+scroll_bottom = function()
+{
     if($("#messages").length > 0) {
         $("#messages").scrollTop($("#messages")[0].scrollHeight)
     }
 }
 
-submit_message = function(){
+submit_message = function()
+{
     $("#message_body").on('keydown', function(e){
         if(e.keyCode == 13){
             $('button').click();
@@ -30,6 +32,12 @@ submit_message = function(){
         }
     })
 }
+
+reload_online_users = function()
+{ 
+    $("#online-users").load(" #online-users > *");
+}
+
 
 $(document).on('turbolinks:load', function() {
     $('.ui.dropdown').dropdown();
@@ -40,5 +48,6 @@ $(document).on('turbolinks:load', function() {
 
     scroll_bottom();
     submit_message();
+    reload_online_users();
 })
 

@@ -9,7 +9,6 @@ class ChatroomChannel < ApplicationCable::Channel
       ActionCable.server.broadcast "chatroom_channel", 
 
       current_user.online = true
-
       current_user.save!
 
     end
@@ -21,11 +20,7 @@ class ChatroomChannel < ApplicationCable::Channel
 
     if current_user
 
-      # Any cleanup needed when channel is unsubscribed
-      ActionCable.server.broadcast "chatroom_channel",
-
       current_user.online = false
-
       current_user.save!      
 
     end
