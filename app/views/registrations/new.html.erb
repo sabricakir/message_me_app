@@ -1,0 +1,15 @@
+<h2 class="ui center aligned small icon header">
+  <i class="pencil alternate green icon"></i>
+  Kayıt Ol
+</h2>
+<%= form_for(:registration, html:{class:"ui form", role:"form"},url: signup_path) do |f|%>
+  <div class="field">
+    <%= f.label :username, "Kullanıcı Adı"%>
+    <%= f.text_field :username, placeholder:"Kullanıcı Adınızı Giriniz"%>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Şifre"%>
+    <%= f.password_field :password, placeholder:"Şifrenizi Giriniz"%>
+  </div>
+  <%= f.submit "Kayıt Ol", class:"ui  fluid green button"%>
+<%end%>
